@@ -1,0 +1,141 @@
+/* responsive.css */
+
+/* Hamburger button hidden on desktop */
+.hamburger {
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    display: none;
+    z-index: 1001;
+}
+
+/* Hidden by default */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 99; /* less than sidebar's z-index */
+}
+
+/* Show overlay when sidebar active */
+.sidebar.active + .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-550px);
+    transition: transform 0.3s ease;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #fff;
+    z-index: 999;
+    /* remove display: none */
+  }
+
+  .sidebar img {
+    visibility: hidden;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .results-header {
+    display: block;
+  }
+
+  nav.main-nav {
+    z-index: 999;
+  }
+}
+
+
+
+
+/* For tablets and below */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    /* .sidebar {
+        display: none;
+    } */
+    nav.main-nav {
+        justify-content: space-between;
+    }
+    nav.main-nav .left-nav {
+        display: flex;
+    }
+    nav.main-nav .left-nav img {
+        width: 150px;
+        display: block;
+    }
+        header {
+      display: block;
+    }
+    .student-info {
+        text-align: left;
+    }
+    .user-info {
+        display: block;
+        /* text-align: center; */
+    }
+
+    .gpa {
+      width: 100%;
+      padding: 0;
+    }
+
+    .attendance-overview {
+        display: block;
+    }
+    .calendar {
+        width: 100%;
+        padding: 0;
+    }
+    .attendance-header {
+        align-items: start;
+    }
+    .attendance-header h3 {
+        font-size: 1.1em;
+    }
+    .day {
+        overflow-x: scroll;
+    }
+    .status {
+        width: 25px;
+        height: 25px;
+    }
+    .attendance-summary {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+    }
+
+
+}
