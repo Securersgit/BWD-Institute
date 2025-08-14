@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/result.css">
   <link rel="stylesheet" href="/css/tabs.css">
   <link rel="stylesheet" href="/css/responsive.css">
@@ -105,17 +105,17 @@
 
       <header>
         <div class="user-info">
-          <img src="/img/Frame 5.png" alt="Profile">
+          <img id="profileImage" src="/img/Frame 5.png" alt="Profile">
           <div class="student-info">
               <div class="welcome">
                   <h3 class="welcome">Welcome,</h3>
-                  <h3><span class="highlight">DUDU, Emmanuel</span> your current studentship status for (2024/2025) Session is ACTIVE</h3>
+                  <h3><span id="profileName" class="highlight">DUDU, Emmanuel</span> your current studentship status for (2024/2025) Session is ACTIVE</h3>
                   <p><b>400lvl UI/UX DESIGN</b> </p>
               </div>
               <div class="details">
                   <div>
                       <p><span>DETAILS:</span></p>
-                      <p><span>STUDENT ID:</span> #SDT001:</p>
+                      <p><span>STUDENT ID:</span> <span id="studentId">#SDT001</span>:</p>
                       <p><span>LEVEL:</span> 400</p>
                   </div>
                   <div>
@@ -130,7 +130,7 @@
           <div class="gp">
               <div>
                   <h5>Overall GPA</h5>
-                  <p>3.85 <span>+0.12</span></p>
+                  <p id="gpa">3.85 <span>+0.12</span></p>
               </div>
               <div>
                   <!-- <i>-</i> -->
@@ -140,7 +140,7 @@
           <div class="gp">
               <div>
                   <h5>Class Rank</h5>
-                  <p>1st <span>off 98</span></p>
+                  <p id="classRank">1st <span>off 98</span></p>
               </div>
               <div>
                   <!-- <i>-</i> -->
@@ -149,8 +149,8 @@
           </div>
           <div class="gp">
               <div>
-                  <h5>Class Rank</h5>
-                  <p>96% <span>+2%</span></p>
+                  <h5>Attendance Rank</h5>
+                  <p id="attendanceRank">96% <span>+2%</span></p>
               </div>
               <div>
                   <!-- <i>-</i> -->
@@ -190,7 +190,7 @@
           </div>
           <div class="day">
             <span>Fri</span>
-            <div class="status late">⏺</div>
+            <div class="status late"><img src="/img/icons8-white.png" alt=""></div>
           </div>
           <div class="day">
             <span>Mon</span>
@@ -219,7 +219,7 @@
             </div>
           </div>
           <div class="summary-card late">
-            <div class="icon">⏺</div>
+            <div class="icon"><img src="/img/icons8-orange.png" alt=""></div>
             <div>
               <h4>5</h4>
               <p>Late</p>
@@ -471,5 +471,6 @@ overlay.addEventListener('click', () => {
   <script src="js/main.js"></script>
   <script src="/js/result.js"></script>
   <script src="/js/tabs.js"></script>
+  <script src="/js/dashboard.js"></script>
 </body>
 </html>
