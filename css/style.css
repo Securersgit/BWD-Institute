@@ -133,7 +133,7 @@ header {
 }
 
 .user-info img {
-  border-radius: 0px;
+  border-radius: 15px;
   margin-right: 10px;
   width: 250px;
   height: auto;
@@ -301,6 +301,10 @@ header {
   color: white;
   font-weight: bold;
 }
+.status img {
+  width: 30px;
+  height: 30px;
+}
 
 .status.present {
   background: #4caf50;
@@ -358,6 +362,10 @@ header {
 
 .icon {
   font-size: 1.5rem;
+}
+.icon img {
+  width: 30px;
+  height: 30px;
 }
 
     nav.main-nav .left-nav img {
