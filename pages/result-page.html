@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Dashboard</title>
+  <link rel="stylesheet" href="/css/result.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+    <div class="main-content">
+
+        <!-- Results Section -->
+<section id="results-section" class="results hidden">
+  <div class="results-header">
+    <h2>Course Performance</h2>
+    <select id="semester-select">
+      <option>Rain Semester</option>
+      <option>Harmattan Semester</option>
+    </select>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats-cards">
+    <div class="stat-card">
+      <h3>3.85 <span class="positive">+0.12</span></h3>
+      <p>Overall GPA</p>
+    </div>
+    <div class="stat-card">
+      <h3>1st <span class="small-text">of 98</span></h3>
+      <p>Class Rank</p>
+    </div>
+    <div class="stat-card">
+      <h3>96% <span class="positive">+2%</span></h3>
+      <p>Attendance Rate</p>
+    </div>
+  </div>
+
+<!-- Courses Grid -->
+      <div class="courses-grid">
+        <div class="course-card blue">
+          <div class="course-header">
+            <img src="/img/book-icon.png" alt="">
+            <div>
+              <h4>GST 401</h4>
+              <p>Ms. Rodriguez</p>
+            </div>
+          </div>
+          <div class="grade-bar">
+            <span class="grade">A</span>
+            <div class="progress-text">94%</div>
+          </div>
+          <div class="progress-bar"><span style="width:94%"></span></div>
+          <ul>
+            <li>Assignments <span>8/10</span></li>
+            <li>Quizzes <span>5/5</span></li>
+            <li>Tests <span>3/3</span></li>
+          </ul>
+        </div>
+
+        <div class="course-card green">
+          <div class="course-header">
+            <span class="grade">A-</span>
+            <h4>GST 402</h4>
+            <p>Mr. Thompson</p>
+          </div>
+          <div class="progress-bar green-bar"><span style="width:87%"></span></div>
+          <div class="progress-text">87%</div>
+          <ul>
+            <li>Assignments <span>8/10</span></li>
+            <li>Quizzes <span>5/5</span></li>
+            <li>Tests <span>3/3</span></li>
+          </ul>
+        </div>
+
+        <!-- Duplicate this card structure for more courses -->
+      </div>
+</section>
+
+    </div>
+
+
+  <script src="/js/result.js"></script>
+</body>
+</html>
