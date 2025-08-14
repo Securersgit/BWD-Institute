@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./20250811_094653 1 (1).png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Build With Dudu Tech Institute</title>
+    <style>
+           * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       font-family: "Montserrat", sans-serif;
+   }
+
+   /* NAV-BAR */
+
+   nav {
+       position: sticky;
+       top: 0;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 10px 20px;
+       background-color: #fff;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+       z-index: 1000;
+   }
+
+   .logo {
+       display: flex;
+       align-items: center;
+   }
+
+   .logo img {
+       height: 50px;
+       width: auto;
+       object-fit: contain;
+   }
+
+   .nav-links {
+       display: flex;
+       gap: 20px;
+   }
+
+   .nav-links li {
+       list-style: none;
+   }
+
+   .nav-links li a {
+       position: relative;
+       text-decoration: none;
+       /* color: #2E70D4; */
+       color: #000000;
+       font-weight: 500;
+       padding: 5px 0;
+   }
+
+   .nav-links li a:hover {
+       color: #2E70D4;
+   }
+
+   .nav-links li a::after {
+       content: '';
+       position: absolute;
+       left: 0;
+       bottom: -3px;
+       width: 0;
+       height: 2px;
+       background-color: #2E70D4;
+       transition: width 0.3s ease;
+   }
+
+   .nav-links li a:hover::after {
+       width: 100%;
+   }
+
+   .nav-buttons {
+       display: flex;
+       align-items: center;
+       gap: 15px;
+   }
+
+   .btn-primary {
+       position: relative;
+       background: #fff;
+       color: #000;
+       padding: 8px 18px;
+       border: 1px solid #2E70D4;
+       border-radius: 5px;
+       cursor: pointer;
+       overflow: hidden;
+       z-index: 1;
+       transition: color 0.3s ease-in-out;
+   }
+
+   .btn-primary::after {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 0%;
+       height: 100%;
+       background-color: #2E70D4;
+       border-radius: 5px;
+       z-index: -1;
+       transition: width 0.5s ease-in-out;
+   }
+
+   .btn-primary:hover {
+       color: #fff;
+   }
+
+   .btn-primary:hover::after {
+       width: 100%;
+       color: #fff;
+   }
+
+   .btn-secondary {
+       background: #2E70D4;
+       color: #fff;
+       padding: 8px 18px;
+       border-radius: 5px;
+       border: none;
+       cursor: pointer;
+   }
+
+   .nav-btn {
+       display: none;
+   }
+
+   /* Hamburger Menu Icon */
+   .hamburger {
+       display: none;
+       flex-direction: column;
+       gap: 4px;
+       cursor: pointer;
+   }
+
+   .hamburger span {
+       height: 8px;
+       width: 40px;
+       background-color: #2E70D4;
+       border-radius: 2px;
+       transition: all 0.4s ease;
+   }
+
+
+   .hamburger.open span:nth-child(1) {
+       transform: rotate(45deg) translate(6px, 14px);
+   }
+
+   .hamburger.open span:nth-child(2) {
+       opacity: 0;
+   }
+
+   .hamburger.open span:nth-child(3) {
+       transform: rotate(-45deg) translate(5px, -14px);
+   }
+
+   .desktop-buttons {
+       display: none;
+   }
+
+   /* HERO-SECTION */
+   .hero-section {
+       background: linear-gradient(to bottom, #f8f8f8 50%, #85a2ce 100%);
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 80px 60px;
+       gap: 30px;
+       flex-wrap: wrap;
+       /* Allows stacking on smaller screens */
+   }
+
+   .hero-content {
+       max-width: 460px;
+       padding: 30px;
+   }
+
+   .hero-content h1 {
+       font-size: 50px;
+       font-weight: 600;
+       color: #2E70D4;
+   }
+
+   .hero-content p {
+       font-size: 18px;
+       margin-top: 10px;
+   }
+
+   .hero-image {
+       width: 400px;
+       border-radius: 10px;
+       object-fit: cover;
+   }
+
+   .speech-btn {
+       position: relative;
+       background: #3844C3;
+       color: white;
+       border: none;
+       padding: 10px 20px;
+       margin-top: 30px;
+       font-size: 14px;
+       font-family: sans-serif;
+       border-radius: 20px;
+       cursor: pointer;
+       outline: none;
+   }
+
+   .speech-btn::after {
+       content: "";
+       position: absolute;
+       bottom: -5px;
+       left: 3px;
+       width: 0;
+       height: 0;
+       border-left: 2px solid transparent;
+       border-right: 7px solid transparent;
+       border-top: 12px solid #3844C3;
+   }
+
+
+
+   /* SECTION-ONE */
+   .section-one {
+       padding: 60px 80px;
+       text-align: center;
+   }
+
+   .hero-txt {
+       color: #FD7C41;
+       font-size: 12px;
+       font-weight: 600;
+       letter-spacing: 1px;
+   }
+
+   .section-one h2 {
+       font-size: 28px;
+       margin-top: 10px;
+       margin-bottom: 10px;
+       color: #2E70D4;
+   }
+
+   .course-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 20px;
+       max-width: 1200px;
+       margin: 30px auto 0;
+       padding: 0 10px;
+   }
+
+   .course-card {
+       background-color: #fff;
+       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+       border: 1px solid #E0E0E0;
+       display: flex;
+       align-items: center;
+       gap: 15px;
+       padding: 15px 20px;
+       border-radius: 10px;
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
+       cursor: pointer;
+   }
+
+   .course-card:hover {
+       transform: translateY(-3px);
+       box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+   }
+
+   .course-card p {
+       font-size: 15px;
+       font-weight: 600;
+       color: #333;
+       flex: 1;
+       text-align: left;
+   }
+
+   .course-icon {
+       background-color: #2E70D4;
+       width: 50px;
+       height: 50px;
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-shrink: 0;
+   }
+
+   .course-icon svg {
+       width: 28px;
+       height: 28px;
+       stroke: #fff;
+   }
+
+
+   /* COURSES-SECTION */
+
+   .courses-section {
+       padding: 50px 20px;
+       background: linear-gradient(to bottom, #f8f8f8, #fff);
+       text-align: center;
+   }
+
+   .courses-section h2 {
+       font-size: 28px;
+       margin-bottom: 10px;
+       color: #2E70D4;
+   }
+
+   .section-intro {
+       max-width: 600px;
+       margin: 0 auto 40px;
+       color: #555;
+       font-size: 16px;
+   }
+
+   .courses-grid-2 {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 25px;
+   }
+
+   .course-card-2 {
+       background-color: #fff;
+       border-radius: 10px;
+       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+       border: 1px solid #E0E0E0;
+       padding: 20px;
+       text-align: left;
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
+   }
+
+   .course-card-2:hover {
+       transform: translateY(-3px);
+       box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12);
+   }
+
+   .course-icon-2 {
+       background-color: #2E70D4;
+       width: 55px;
+       height: 55px;
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin-bottom: 15px;
+   }
+
+   .course-icon-2 svg {
+       width: 28px;
+       height: 28px;
+   }
+
+   .course-card-2 h3 {
+       font-size: 18px;
+       margin-bottom: 10px;
+       color: #333;
+   }
+
+   .course-card-2 p {
+       font-size: 14px;
+       color: #666;
+       margin-bottom: 12px;
+   }
+
+   .course-card-2 ul {
+       padding-left: 18px;
+   }
+
+   .course-card-2 ul li {
+       font-size: 13px;
+       color: #444;
+       margin-bottom: 6px;
+       list-style-type: disc;
+   }
+
+   /* FOOTER */
+
+   .footer {
+       background-color: #2E70D4;
+       color: white;
+       padding-top: 40px;
+   }
+
+   .footer-container {
+       max-width: 1200px;
+       margin: auto;
+       display: flex;
+       flex-wrap: wrap;
+       gap: 30px;
+       padding: 0 20px;
+   }
+
+   .footer-brand,
+   .footer-links,
+   .footer-contact {
+       flex: 1;
+       min-width: 250px;
+   }
+
+   .footer h2,
+   .footer h4 {
+       margin-bottom: 10px;
+   }
+
+   .footer p {
+       font-size: 14px;
+       line-height: 1.6;
+   }
+
+   .footer-links ul {
+       list-style: none;
+       padding: 0;
+   }
+
+   .footer-links ul li {
+       margin-bottom: 8px;
+   }
+
+   .footer-links ul li a {
+       color: white;
+       text-decoration: none;
+       transition: opacity 0.3s ease;
+   }
+
+   .footer-links ul li a:hover {
+       opacity: 0.8;
+   }
+
+   .social-icons {
+       display: flex;
+       gap: 12px;
+       margin-top: 10px;
+   }
+
+   .social-icons a svg {
+       width: 24px;
+       height: 24px;
+       transition: transform 0.2s ease;
+   }
+
+   .social-icons a:hover svg {
+       transform: scale(1.1);
+   }
+
+   .footer-bottom {
+       text-align: center;
+       border-top: 1px solid rgba(255, 255, 255, 0.2);
+       padding: 15px 0;
+       margin-top: 20px;
+   }
+
+   .footer-bottom p {
+       font-size: 13px;
+   }
+
+
+
+
+   /* Mobile Responsiveness */
+   @media (max-width: 992px) {
+       .hero-section {
+           flex-direction: column;
+           text-align: center;
+           padding: 60px 30px;
+       }
+
+       .hero-content {
+           max-width: 100%;
+           padding: 20px;
+       }
+
+       .hero-content h1 {
+           font-size: 36px;
+       }
+
+       .hero-image {
+           width: 300px;
+       }
+
+       .section-one {
+           padding: 40px 20px;
+       }
+
+       .section-one h2 {
+           font-size: 20px;
+       }
+
+       .course-card {
+           flex-direction: column;
+           text-align: center;
+           padding: 20px;
+       }
+
+       .course-card p {
+           text-align: center;
+           font-size: 14px;
+       }
+   }
+
+   @media (max-width: 600px) {
+       .hero-section {
+           padding: 40px 20px;
+       }
+
+       .hero-content h1 {
+           font-size: 28px;
+       }
+
+       .section-one {
+           padding: 50px 40px;
+       }
+
+       .section-one h2 {
+           font-size: 24px;
+       }
+   }
+
+   @media (max-width: 500px) {
+       .courses-section {
+           padding: 40px 15px;
+       }
+
+       .course-card-2 {
+           padding: 20px;
+       }
+
+       .courses-section h2 {
+           font-size: 24px;
+       }
+
+       .section-intro {
+           font-size: 12px;
+       }
+   }
+
+   @media (max-width: 768px) {
+       .footer-container {
+           flex-direction: column;
+           /* text-align: center; */
+           gap: 20px;
+       }
+
+       .desktop-buttons {
+           display: block;
+       }
+
+       .nav-buttons {
+           display: none;
+       }
+
+       .nav-btn {
+           display: block;
+       }
+
+       .hamburger {
+           display: flex;
+       }
+
+       .nav-links {
+           position: absolute;
+           top: 100%;
+           left: 0;
+           width: 100%;
+           background: white;
+           flex-direction: column;
+           /* width: 220px;
+           height: calc(100vh - 70px); */
+           padding: 20px;
+           gap: 15px;
+           transform: translateX(-100%);
+           opacity: 0;
+           visibility: hidden;
+           transition: transform 0.4s ease, opacity 0.4s ease;
+           /* box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1); */
+       }
+
+       .nav-links.active {
+           transform: translateX(0);
+           opacity: 1;
+           visibility: visible;
+       }
+
+       .mobile-buttons {
+           display: flex;
+           flex-direction: column;
+           gap: 10px;
+           margin-top: 20px;
+       }
+
+   }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="./20250811_094653 1 (1).png" alt=""></div>
+        <div id="toggle-btn" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div>
+            <ul class="nav-links">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Courses</a></li>
+                <li><a href="">Programmes</a></li>
+                <li><a href="">Reviews</a></li>
+                <li class="nav-btn"><button class="btn-primary">Sign In</button> </li>
+                <!-- <li class="nav-btn"><button class="btn-secondary">Register</button></li> -->
+
+            </ul>
+        </div>
+        <div class="nav-buttons">
+            <a href="https://bwd-institute-lblq.vercel.app/">
+
+                <button class="btn-primary">Sign In</button>
+            </a>
+            <button class="btn-secondary">Register</button>
+        </div>
+
+    </nav>
+
+    <!-- <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> -->
+
+    <!-- ===HERO-SECTION -->
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>GO beyond the limitations of e-Learning.</h1>
+            <p>Refining the boundaries of digital knowledge</p>
+            <a href="https://bwd-institute-lblq.vercel.app/">
+
+                <button class="speech-btn">Get started</button>
+            </a>
+        </div>
+        <img class="hero-image" src="Frame 1618868233.png" alt="">
+    </div>
+
+    <!-- === SECTION-ONE === -->
+    <div class="section-one">
+        <p class="hero-txt">TRENDING COURSES CATEGORY</p>
+        <h2>Our Leading Category</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-icon">
+                    <!-- Network Administration -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-label="Network Administration">
+                        <circle cx="5" cy="6" r="2"></circle>
+                        <circle cx="19" cy="6" r="2"></circle>
+                        <circle cx="12" cy="18" r="2"></circle>
+                        <path d="M5 8v4l7 3 7-3V8"></path>
+                        <path d="M7 6h10"></path>
+                    </svg>
+                </div>
+                <p>Network Administration</p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <!-- AI and Machine Learning -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-label="AI and Machine Learning">
+                        <!-- chip body -->
+                        <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+                        <!-- pins -->
+                        <path d="M9 3v3M15 3v3M9 21v-3M15 21v-3M3 9h3M3 15h3M21 9h-3M21 15h-3"></path>
+                        <!-- simple brain/circuit nodes -->
+                        <circle cx="10" cy="10" r="1"></circle>
+                        <circle cx="14" cy="10" r="1"></circle>
+                        <circle cx="12" cy="14" r="1"></circle>
+                        <path d="M10 10h4M10 10l2 4M14 10l-2 4"></path>
+                    </svg>
+                </div>
+                <p>AI and Machine Learning</p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <!-- Data Science and Analytics -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-label="Data Science and Analytics">
+                        <!-- axes -->
+                        <path d="M4 19h16"></path>
+                        <!-- bars -->
+                        <rect x="6" y="12" width="2.5" height="7" rx="0.5"></rect>
+                        <rect x="10.75" y="9" width="2.5" height="10" rx="0.5"></rect>
+                        <rect x="15.5" y="6" width="2.5" height="13" rx="0.5"></rect>
+                        <!-- trend line -->
+                        <path d="M6 12l4-3 3 2 5-5"></path>
+                    </svg>
+                </div>
+                <p>Data Science and Analytics</p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <!-- Cybersecurity Essentials -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-label="Cybersecurity Essentials">
+                        <!-- shield -->
+                        <path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3z"></path>
+                        <!-- lock -->
+                        <rect x="9" y="11" width="6" height="5" rx="1"></rect>
+                        <path d="M10.5 11V9.5a1.5 1.5 0 0 1 3 0V11"></path>
+                    </svg>
+                </div>
+                <p>Cybersecurity Essentials</p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <!-- Software Engineering -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-label="Software Engineering">
+                        <!-- code brackets -->
+                        <path d="M8 8l-3 4 3 4"></path>
+                        <path d="M16 8l3 4-3 4"></path>
+                        <!-- gear (mini) -->
+                        <circle cx="12" cy="12" r="1.2"></circle>
+                        <path
+                            d="M12 9.8v-.9M12 15.1v-.9M9.9 12h-.9M15.1 12h-.9M10.8 10.8l-.6-.6M13.8 13.8l-.6-.6M10.8 13.2l-.6.6M13.8 10.2l-.6.6">
+                        </path>
+                    </svg>
+                </div>
+                <p>Software Engineering</p>
+            </div>
+
+            <div class="course-card">
+                <div class="course-icon">
+                    <!-- Mobile App Development -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" aria-label="Mobile App Development">
+                        <!-- phone -->
+                        <rect x="7" y="3" width="10" height="18" rx="2"></rect>
+                        <circle cx="12" cy="17" r="1"></circle>
+                        <!-- app grid -->
+                        <rect x="9" y="7" width="2.5" height="2.5" rx="0.4"></rect>
+                        <rect x="12.5" y="7" width="2.5" height="2.5" rx="0.4"></rect>
+                        <rect x="9" y="10.5" width="2.5" height="2.5" rx="0.4"></rect>
+                        <rect x="12.5" y="10.5" width="2.5" height="2.5" rx="0.4"></rect>
+                    </svg>
+                </div>
+                <p>Mobile App Development</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- === COURSE-SECTION -->
+
+    <section class="courses-section">
+        <h2>Our Professional Courses</h2>
+        <p class="section-intro">
+            Learn in-demand skills from industry experts. Each course is designed to prepare you for real-world
+            challenges and boost your career prospects.
+        </p>
+
+        <div class="courses-grid-2">
+            <!-- Network Administration -->
+            <div class="course-card-2">
+                <div class="course-icon-2">
+                    <!-- Example network admin icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 20h9m-9 0a9 9 0 100-18 9 9 0 000 18zm0 0v-4m0-4h4m-4 0H8" />
+                    </svg>
+                </div>
+                <h3>Network Administration</h3>
+                <p>Master the skills to manage, secure, and troubleshoot enterprise networks.</p>
+                <ul>
+                    <li>Setup and maintain computer networks</li>
+                    <li>Learn Cisco and network security fundamentals</li>
+                    <li>Prepare for CompTIA & CCNA certifications</li>
+                </ul>
+            </div>
+
+            <!-- AI & Machine Learning -->
+            <div class="course-card-2">
+                <div class="course-icon-2">
+                    <!-- AI icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6h4.5M19.07 4.93A10 10 0 1112 22a10 10 0 017.07-17.07z" />
+                    </svg>
+                </div>
+                <h3>AI & Machine Learning</h3>
+                <p>Build intelligent systems using Python, TensorFlow, and real-world datasets.</p>
+                <ul>
+                    <li>Understand AI concepts & neural networks</li>
+                    <li>Hands-on ML model building</li>
+                    <li>Data preprocessing & predictive analysis</li>
+                </ul>
+            </div>
+
+            <!-- Data Science -->
+            <div class="course-card-2">
+                <div class="course-icon-2">
+                    <!-- Data icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h18M9 3v18M15 3v18M3 9h18M3 15h18" />
+                    </svg>
+                </div>
+                <h3>Data Science & Analytics</h3>
+                <p>Analyze and visualize data to drive smart business decisions.</p>
+                <ul>
+                    <li>Learn Python, SQL, and Excel</li>
+                    <li>Data visualization with Power BI</li>
+                    <li>Statistical modeling & forecasting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Left - Brand -->
+            <div class="footer-brand">
+                <h2>Build With Dudu Tech Institute</h2>
+                <p>Empowering the next generation of tech leaders.</p>
+            </div>
+
+            <!-- Middle - Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right - Contact -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>Email: info@dudutech.edu</p>
+                <p>Phone: +234 800 123 4567</p>
+                <p>Address: 123 Tech Avenue, Lagos, Nigeria</p>
+                <div class="social-icons">
+                    <!-- Facebook -->
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                            <path
+                                d="M22 12.07C22 6.48 17.52 2 12 2S2 6.48 2 12.07c0 4.99 3.66 9.13 8.44 9.93v-7.03H8.08v-2.9h2.36V9.8c0-2.33 1.39-3.63 3.52-3.63 1.02 0 2.09.18 2.09.18v2.3h-1.18c-1.17 0-1.53.73-1.53 1.48v1.77h2.6l-.42 2.9h-2.18v7.03C18.34 21.2 22 17.06 22 12.07z" />
+                        </svg>
+                    </a>
+                    <!-- Twitter/X -->
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                            <path d="M18 2h-3l-3 5-3-5H6l4 6-4 6h3l3-5 3 5h3l-4-6 4-6z" />
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+                            <path
+                                d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.99H4.7v14.01H.22V8.99zM8.77 8.99h4.32v1.91h.06c.6-1.14 2.06-2.34 4.24-2.34 4.53 0 5.37 2.98 5.37 6.86v7.58h-4.48v-6.71c0-1.6-.03-3.66-2.23-3.66-2.23 0-2.57 1.74-2.57 3.54v6.83H8.77V8.99z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Build With Dudu Tech Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
+<script>
+    const toggleBtn = document.getElementById("toggle-btn");
+    const navLinks = document.querySelector(".nav-links");
+
+    toggleBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        toggleBtn.classList.toggle("open");
+    });
+
+
+</script>
