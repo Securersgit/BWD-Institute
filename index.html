@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Student Dashboard</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/result.css">
-  <link rel="stylesheet" href="/css/tabs.css">
-  <link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/result.css">
+<link rel="stylesheet" href="css/tabs.css">
+<link rel="stylesheet" href="css/responsive.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
           <path d="M7 14h2v3H7v-3zm4-4h2v7h-2v-7zm4-4h2v11h-2V6z"/>
         </svg>
       </span>
-      My Results
+      Results
     </li>
     <li>
       <span class="icon">
@@ -97,7 +97,7 @@
         <img src="/img/school-logo.png" alt="">
       </div>
 
-      <a href="#">
+      <a href="https://bwd-institute-lblq.vercel.app/pages/login.html">
           <button class="sign-out">Sign Out <img src="/img/sign-out.png" alt=""></button>
       </a>
     </nav>
@@ -105,7 +105,7 @@
 
       <header>
         <div class="user-info">
-          <img id="profileImage" src="/img/Frame 5.png" alt="Profile">
+<img id="profileImage" src="img/Frame 5.png" alt="Profile">
           <div class="student-info">
               <div class="welcome">
                   <h3 class="welcome">Welcome,</h3>
@@ -291,7 +291,7 @@
         <div class="stat-card">
           <div>
             <h5>Overall GPA</h5>
-            <p>3.85 <span>+0.12</span></p>
+            <p id="resultGpa">3.85 <span>+0.12</span></p>
           </div>
           <div>
             <img src="/img/arrow-up.png" alt="up">
@@ -301,7 +301,7 @@
         <div class="stat-card">
           <div>
             <h5>Class Rank</h5>
-            <p>1st <span>of 98</span></p>
+            <p id="resultClassRank">1st <span>of 98</span></p>
           </div>
           <div>
             <img src="/img/arrow-up.png" alt="up">
@@ -311,7 +311,7 @@
         <div class="stat-card">
           <div>
             <h5>Attendance Rank</h5>
-            <p>96% <span>+2%</span></p>
+            <p id="resultAttendanceRank">96% <span>+2%</span></p>
           </div>
           <div>
             <img src="/img/arrow-up.png" alt="up">
@@ -333,9 +333,9 @@
           </div>
           <div class="grade-bar">
             <span class="grade">A</span>
-            <div class="progress-text">94%</div>
+            <div class="progress-text">84%</div>
           </div>
-          <div class="progress-bar blue-bar"><span style="width:94%"></span></div>
+          <div class="progress-bar blue-bar"><span style="width:84%"></span></div>
           <ul>
             <li>Assignments <span>8/10</span></li>
             <li>Quizzes <span>5/5</span></li>
@@ -347,15 +347,15 @@
           <div class="course-header">
             <img src="/img/book-icon.png" alt="">
             <div>
-              <h4>GST 401</h4>
+              <h4>GST 402</h4>
               <p>Ms. Rodriguez</p>
             </div>
           </div>
           <div class="grade-bar">
             <span class="grade">A</span>
-            <div class="progress-text">94%</div>
+            <div class="progress-text">70%</div>
           </div>
-          <div class="progress-bar green-bar"><span style="width:94%"></span></div>
+          <div class="progress-bar green-bar"><span style="width:70%"></span></div>
           <ul>
             <li>Assignments <span>8/10</span></li>
             <li>Quizzes <span>5/5</span></li>
@@ -367,15 +367,15 @@
           <div class="course-header">
             <img src="/img/book-icon.png" alt="">
             <div>
-              <h4>GST 401</h4>
+              <h4>GST 411</h4>
               <p>Ms. Rodriguez</p>
             </div>
           </div>
           <div class="grade-bar">
             <span class="grade">A</span>
-            <div class="progress-text">94%</div>
+            <div class="progress-text">98%</div>
           </div>
-          <div class="progress-bar red-bar"><span style="width:94%"></span></div>
+          <div class="progress-bar red-bar"><span style="width:98%"></span></div>
           <ul>
             <li>Assignments <span>8/10</span></li>
             <li>Quizzes <span>5/5</span></li>
@@ -387,15 +387,15 @@
           <div class="course-header">
             <img src="/img/book-icon.png" alt="">
             <div>
-              <h4>GST 401</h4>
+              <h4>GST 412</h4>
               <p>Ms. Rodriguez</p>
             </div>
           </div>
           <div class="grade-bar">
-            <span class="grade">A</span>
-            <div class="progress-text">94%</div>
+            <span class="grade">C</span>
+            <div class="progress-text">64%</div>
           </div>
-          <div class="progress-bar green-bar"><span style="width:94%"></span></div>
+          <div class="progress-bar green-bar"><span style="width:64%"></span></div>
           <ul>
             <li>Assignments <span>8/10</span></li>
             <li>Quizzes <span>5/5</span></li>
@@ -407,15 +407,15 @@
           <div class="course-header">
             <img src="/img/book-icon.png" alt="">
             <div>
-              <h4>GST 401</h4>
+              <h4>GST 414</h4>
               <p>Ms. Rodriguez</p>
             </div>
           </div>
           <div class="grade-bar">
-            <span class="grade">A</span>
-            <div class="progress-text">94%</div>
+            <span class="grade">C</span>
+            <div class="progress-text">55%</div>
           </div>
-          <div class="progress-bar red-bar"><span style="width:94%"></span></div>
+          <div class="progress-bar red-bar"><span style="width:55%"></span></div>
           <ul>
             <li>Assignments <span>8/10</span></li>
             <li>Quizzes <span>5/5</span></li>
@@ -427,15 +427,15 @@
           <div class="course-header">
             <img src="/img/book-icon.png" alt="">
             <div>
-              <h4>GST 401</h4>
+              <h4>GST 413</h4>
               <p>Ms. Rodriguez</p>
             </div>
           </div>
           <div class="grade-bar">
             <span class="grade">A</span>
-            <div class="progress-text">94%</div>
+            <div class="progress-text">91%</div>
           </div>
-          <div class="progress-bar blue-bar"><span style="width:94%"></span></div>
+          <div class="progress-bar blue-bar"><span style="width:91%"></span></div>
           <ul>
             <li>Assignments <span>8/10</span></li>
             <li>Quizzes <span>5/5</span></li>
